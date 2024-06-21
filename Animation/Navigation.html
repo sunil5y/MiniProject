@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .menu-container {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100%;
+            background-color: #333;
+            transition: left 0.3s ease;
+        }
+        .menu-container.open {
+            left: 0;
+        }
+        .menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .menu-item {
+            padding: 15px;
+            color: white;
+            border-bottom: 1px solid #444;
+        }
+        .menu-toggle {
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const toggleButton = document.querySelector(".menu-toggle");
+            const menuContainer = document.querySelector(".menu-container");
+            toggleButton.addEventListener("click", () => {
+                menuContainer.classList.toggle("open");
+            });
+        });
+    </script>
+    <title>Animated Navigation Menu</title>
+</head>
+<body>
+    <button class="menu-toggle">Toggle Menu</button>
+    <div class="menu-container">
+        <ul class="menu">
+            <li class="menu-item">Home</li>
+            <li class="menu-item">About</li>
+            <li class="menu-item">Services</li>
+            <li class="menu-item">Contact</li>
+        </ul>
+    </div>
+</body>
+</html>
